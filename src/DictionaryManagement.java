@@ -7,8 +7,8 @@ public class DictionaryManagement extends Dictionary {
     final String export_path = "./resource/export.txt";
 
     public void insertFromCommandline() {
-        System.out.println("Insert word from command line: ");
-        System.out.print("Input number of words in dictionary: ");
+        System.out.println("Trèn thêm từ: ");
+        System.out.print("Nhập số lượng từ: ");
         Scanner scanner = new Scanner(System.in);
         int numberOfVocabulary = scanner.nextInt();
         scanner.nextLine();
@@ -34,7 +34,7 @@ public class DictionaryManagement extends Dictionary {
     }
 
     public void dictionaryLookup() {
-        System.out.println("Write the word you want to lookup: ");
+        System.out.println("Điền từ bạn cần tra cứu: ");
         Scanner scanner = new Scanner(System.in);
         String lookupWord = scanner.nextLine();
         for (Word word: allWords) {
@@ -43,27 +43,27 @@ public class DictionaryManagement extends Dictionary {
                 return;
             }
         }
-        System.out.println("Can't find word \"" + lookupWord + "\" in dictionary!");
+        System.out.println("Không thể tìm từ \"" + lookupWord + "\" trong từ điển!");
     }
 
     public void addWordToDictionary() {
-        System.out.println("Write the word you want to add: ");
+        System.out.println("Điền từ bạn muốn thêm: ");
         Word newWord = new Word();
         newWord.readWord(new Scanner(System.in));
         allWords.add(newWord);
-        System.out.println("Added!");
+        System.out.println("Đã thêm!");
     }
 
     public void removeWordFromDictionary() {
-        System.out.println("Write the word you want to remove: ");
+        System.out.println("Điền từ bạn muốn xóa: ");
         Scanner scanner = new Scanner(System.in);
         String removeWord = scanner.nextLine();
         allWords.removeIf(word -> word.wordTarget.equals(removeWord));
-        System.out.println("Removed!");
+        System.out.println("Đã xóa!");
     }
 
     public void editWordInDictionary() {
-        System.out.println("Write the word you want to edit: ");
+        System.out.println("Điền từ bạn muốn chỉnh sửa: ");
         Word editWord = new Word();
         editWord.readWord(new Scanner(System.in));
         for (int i = 0; i < allWords.size(); i++) {
@@ -71,7 +71,7 @@ public class DictionaryManagement extends Dictionary {
                 allWords.set(i, editWord);
             }
         }
-        System.out.println("Edited!");
+        System.out.println("Đã sửa!");
     }
 
     public void dictionaryExportToFile() {
@@ -82,6 +82,6 @@ public class DictionaryManagement extends Dictionary {
             printWriter.printf("%-15d %-20s %-15s%n", (i + 1), allWords.get(i).wordTarget, allWords.get(i).wordExplain);
         }
         printWriter.close();
-        System.out.println("Exported dictionary to \"" + export_path + "\"");
+        System.out.println("Đã chuyển dữ liệu sang \"" + export_path + "\"");
     }
 }

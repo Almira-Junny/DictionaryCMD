@@ -8,7 +8,7 @@ public class Utils {
             File file = new File(filePath);
             return new Scanner(file);
         } catch (FileNotFoundException e) {
-            System.out.println("Error: Can't read " + filePath);
+            System.out.println("Error: Không thể đọc " + filePath);
             e.printStackTrace();
         }
         return null;
@@ -19,7 +19,7 @@ public class Utils {
             File file = new File(filePath);
             return new PrintWriter(file);
         } catch (IOException e) {
-            System.out.println("Error: Can't write " + filePath);
+            System.out.println("Error: Không thể ghi " + filePath);
             e.printStackTrace();
         }
         return null;

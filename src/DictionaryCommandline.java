@@ -10,7 +10,7 @@ public class DictionaryCommandline extends DictionaryManagement {
     }
 
     public void dictionarySearcher() {
-        System.out.println("Write the word you want to search: ");
+        System.out.println("Điền từ bạn cần tìm kiếm: ");
         Scanner scanner = new Scanner(System.in);
         String searchWord = scanner.nextLine();
         for (Word word: allWords) {
@@ -21,14 +21,15 @@ public class DictionaryCommandline extends DictionaryManagement {
     }
 
     public void showAllCommand() {
-        System.out.println("remove  Remove a word from dictionary");
-        System.out.println("edit    Edit explain of a word in dictionary");
-        System.out.println("add     Add a new word to dictionary");
-        System.out.println("lookup  Find explain of a word");
-        System.out.println("show    Show all words in dictionary");
-        System.out.println("search  Show all words start with ...");
-        System.out.println("export  Export current dictionary to file");
-        System.out.println("exit    Close dictionary application");
+        System.out.println("remove :Xóa từ");
+        System.out.println("edit   :Chỉnh sửa từ");
+        System.out.println("add    :Thêm từ");
+        System.out.println("lookup :Tra cứu từ");
+        System.out.println("show   :Hiển thị tất cả");
+        System.out.println("search :Tìm kiếm từ");
+        System.out.println("export :Chuyển dữ liệu sang file export");
+        System.out.println("exit   :Kết thúc");
+        System.out.println("");
     }
 
     public void dictionaryBasic() {
@@ -39,6 +40,7 @@ public class DictionaryCommandline extends DictionaryManagement {
     public void dictionaryAdvanced() {
         insertFromFile();
         showAllWords();
+        showAllCommand();
         boolean isRunning = true;
         while(isRunning) {
             Scanner scanner = new Scanner(System.in);
@@ -76,7 +78,7 @@ public class DictionaryCommandline extends DictionaryManagement {
     }
 
     public static void main(String[] args) {
-        DictionaryCommandline myDictionary = new DictionaryCommandline();
-        myDictionary.dictionaryAdvanced();
+        DictionaryCommandline Dictionary = new DictionaryCommandline();
+        Dictionary.dictionaryAdvanced();
     }
 }
