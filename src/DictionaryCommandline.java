@@ -9,6 +9,11 @@ public class DictionaryCommandline extends DictionaryManagement {
         insertFromCommandline();
         showAllWords();
     }
+    public void dictionaryAdvanced() {
+        insertFromFile();
+        showAllWords();
+        dictionaryLookup();
+    }
 
     public static void main(String[] args) {
 
